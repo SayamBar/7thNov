@@ -16,7 +16,11 @@ FactoryBot.define do
   factory :comment do
     commenter {"Commenter"}
     body {"Comment"}
-    article
+  end
+
+  factory :user do
+    email {"example@gmail.com"}
+    password {"password"}
   end
 
   # factory :user do
