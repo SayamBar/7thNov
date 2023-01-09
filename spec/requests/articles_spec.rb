@@ -28,12 +28,12 @@ RSpec.describe ArticlesController, type: :request do
     end
   end 
 
-  describe "GET #index" do
-    it "renders the index template" do
-      get articles_url 
-      expect(response).to render_template("articles/index")
-    end
-  end
+  # describe "GET #index" do
+  #   it "renders the index template" do
+  #     get articles_url 
+  #     expect(response).to render_template("articles/index")
+  #   end
+  # end
   
   describe "GET #index" do
     it "renders the index template" do

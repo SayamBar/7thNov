@@ -76,3 +76,4 @@ group :test do
 end
 
 gem 'doorkeeper'
+gem 'simplecov', require: false, group: :test

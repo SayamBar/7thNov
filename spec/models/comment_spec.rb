@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   let(:article_1) {create(:article, body:"article")}
   it 'ensures default commenter matches' do
-    comment = create(:comment, article:article_1)
+    comment = create(:comment, article_id: article_1.id)
     expect(comment.body).to eq('Comment')
   end
 

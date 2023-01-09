@@ -13,4 +13,19 @@ RSpec.describe User, type: :model do
   it 'ensures encrypted password' do
     expect(user_1.encrypted_password?).to eq(true)
   end
+
+  context "when the email is incorrect" do
+    it "does not log in the user" do
+      user = User.create(email: "test@example.com", password: "password")
+      expect(User.authenticate("wrong@example.com", "password")).to eq(nil)
+    end
+  end
+  
+  context "when the password is correct" do
+    it "log in the user" do
+      user = User.create(email: "test@example.com", password: "password")
+      expect(User.authenticate("test@example.com", "password")).to eq(user)
+    end
+  end
+  
 end
